@@ -87,7 +87,6 @@ llamafactory-cli train examples/train_full/qwen2_full_sft.yaml
 You could modify it in `LLaMA-Factory/examples/train_full/qwen2_full_sft.yaml`.
 
 ## Evaluate
----
 
 Write the model path obtained in Step 2 `astarthought/evals/models/model_configs.yaml`
 ```bash
