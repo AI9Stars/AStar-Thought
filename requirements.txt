@@ -1,0 +1,9 @@
+# flash-attn==2.7.2.post1
+llmlingua
+deepspeed
+torch==2.5.1
+vllm==0.7.3
+word2number
+latex2sympy2
+setuptools
+typer
