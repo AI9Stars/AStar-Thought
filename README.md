@@ -1,7 +1,6 @@
 ![compare](./assets/compare.png)
 
 # <center>A*-Thought
----
 
 HF Dataset:
 [<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="15"/> **AStar-Thought-1k**](https://huggingface.co/datasets/xxang/AStar-Thought-1k)
@@ -14,7 +13,6 @@ HF Models:
 
 
 ## Introduction
----
 
 A*-Thought introduces a unified framework designed to identify and isolate the most essential thoughts from the extensive reasoning chains produced by these models, automatically discovering compact and effective reasoning paths by leveraging signals at both step and path levels:
 1. At the step level, a bidirectional importance estimation mechanism quantifies the significance of each thinking step based on its relevance to both the question and the prospective solution. 
@@ -34,7 +32,6 @@ A*-Thought could improve both the performance and the efficiency of LRMs (e.g., 
 
 
 ## Data and Model 
----
 
 We open access to the following models trained on the [AStar-Thought-1k](https://huggingface.co/datasets/xxang/AStar-Thought-1k) dataset.
 
@@ -48,7 +45,6 @@ We open access to the following models trained on the [AStar-Thought-1k](https:/
 
 
 ## Getting Started
----
 
 ```bash
 pip install -r requirements.txt
@@ -57,7 +53,6 @@ pip install -e ".[torch,metrics]"
 ```
 
 ## Compress Data
----
 
 ```bash
 device_map="0,1,2,3,4,5,6,7"
@@ -84,7 +79,6 @@ CUDA_VISIBLE_DEVICES="${device_map}" \
 You could modify it in `run_compress.sh`.
 
 ## Train
----
 
 Write the compressed data path obtained in Step 1 to `LLaMA-Factory/data/dataset_info.json`
 ```bash
