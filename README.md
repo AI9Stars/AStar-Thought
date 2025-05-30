@@ -2,10 +2,10 @@
 
 # <center>A*-Thought
 
-HF Dataset:
+Dataset:
 [<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="15"/> **AStar-Thought-1k**](https://huggingface.co/datasets/xxang/AStar-Thought-1k)
 
-HF Models:
+Models:
 [<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="15"/> **AStar-Thought-QwQ-32B**](https://huggingface.co/xxang/AStar-Thought-QwQ-32B)
 [<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="15"/> **AStar-Thought-DeepSeek-R1-Distill-Qwen-32B**](https://huggingface.co/xxang/AStar-Thought-DeepSeek-R1-Distill-Qwen-32B)
 [<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="15"/> **AStar-Thought-s1.1-32B**](https://huggingface.co/xxang/AStar-Thought-s1.1-32B)
