@@ -80,15 +80,15 @@ You could modify it in `run_compress.sh`.
 
 ## Train
 
-Write the compressed data path obtained in Step 1 to `LLaMA-Factory/data/dataset_info.json`
+Write the compressed data path obtained in Step 1 to [`LLaMA-Factory/data/dataset_info.json`](https://github.com/AI9Stars/AStar-Thought/blob/main/LLaMA-Factory/data/dataset_info.json#L730-L743)
 ```bash
 llamafactory-cli train examples/train_full/qwen2_full_sft.yaml
 ```
-You could modify it in `LLaMA-Factory/examples/train_full/qwen2_full_sft.yaml`.
+You could modify it in [`LLaMA-Factory/examples/train_full/qwen2_full_sft.yaml`](https://github.com/AI9Stars/AStar-Thought/blob/main/LLaMA-Factory/examples/train_full/qwen2_full_sft.yaml).
 
 ## Evaluate
 
-Write the model path obtained in Step 2 `astarthought/evals/models/model_configs.yaml`
+Write the model path obtained in Step 2 [`astarthought/evals/models/model_configs.yaml`](https://github.com/AI9Stars/AStar-Thought/blob/main/astarthought/evals/models/model_configs.yaml#L144-L145)
 ```bash
 CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7" \
 python -m astarthought.evals.cli evaluate \
@@ -99,6 +99,6 @@ python -m astarthought.evals.cli evaluate \
     --backend-args tensor_parallel_size=8 \
     --result-dir ./res/eval
 ```
-You could modify it in `run_eval.sh`.
+You could modify it in [`run_eval.sh`](https://github.com/AI9Stars/AStar-Thought/blob/main/run_eval.sh).
 
 
