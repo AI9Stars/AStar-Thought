@@ -51,6 +51,7 @@ pip install -r requirements.txt
 cd LLaMA-Factory
 pip install -e ".[torch,metrics]"
 ```
+Please upgrade `vllm>=0.9.2` and `llama-factory>=0.9.4` to support [Qwen3](https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f).
 
 ## Compress Data
 
