@@ -77,7 +77,7 @@ CUDA_VISIBLE_DEVICES="${device_map}" \
     --max_search_steps 20 \
     --load_s1k
 ```
-You could modify it in `run_compress.sh`.
+You could modify it in [`run_compress.sh`](https://github.com/AI9Stars/AStar-Thought/blob/main/run_compress.sh).
 
 ## Train
 
@@ -102,4 +102,15 @@ python -m astarthought.evals.cli evaluate \
 ```
 You could modify it in [`run_eval.sh`](https://github.com/AI9Stars/AStar-Thought/blob/main/run_eval.sh).
 
+## Citation
+Please cite our [paper](https://arxiv.org/abs/2505.24550v2) if you find our work valuable.
 
+```bibtex
+@misc{astarthought,
+  title={A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings}, 
+  author={Xiaoang Xu and Shuo Wang and Xu Han and Zhenghao Liu and Huijia Wu and Peipei Li and Zhiyuan Liu and Maosong Sun and Zhaofeng He},
+  journal={arXiv preprint arXiv:2505.24550v2},
+  year={2025},
+  url={https://arxiv.org/abs/2505.24550v2}, 
+}
+```
