@@ -12,7 +12,7 @@ class Validator:
     def __init__(self, model_name: str, device_map: str = "7", beta: float = 0.1):
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
         os.environ["CUDA_VISIBLE_DEVICES"] = device_map
-        self.model = LLM(model_name, dtype="float16", tensor_parallel_size=len(device_map.split(',')), gpu_memory_utilization=0.7, enable_prefix_caching=False)
+        self.model = LLM(model_name, dtype="float16", tensor_parallel_size=len(device_map.split(',')), gpu_memory_utilization=0.7, enable_prefix_caching=False, trust_remote_code=True)
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.beta = beta
 
