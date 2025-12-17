@@ -2488,10 +2488,7 @@ class PromptCompressor:
             tokenized_text = self.tokenizer(text, return_tensors="pt")
             input_ids = tokenized_text["input_ids"].to(self.device)
             attention_mask = tokenized_text["attention_mask"].to(self.device)
-        if past_key_values is not None:
-            past_length = past_key_values[0][0].shape[2]
-        else:
-            past_length = 0
+        past_length = 0
         if end is None:
             end = input_ids.shape[1]
         end = min(end, past_length + self.max_position_embeddings)
@@ -2500,11 +2497,9 @@ class PromptCompressor:
             response = self.model(
                 input_ids[:, past_length:end],
                 attention_mask=attention_mask[:, :end],
-                past_key_values=past_key_values,
-                use_cache=True,
+                use_cache=False,
                 output_attentions=True,
             )
-            past_key_values = response.past_key_values
 
         # get PPL
         shift_logits = response.logits[..., :-1, :].contiguous()
@@ -2528,7 +2523,7 @@ class PromptCompressor:
         attn_score = solution_to_thought_attention.sum(dim=[0, 1, 2]) / (thought_end - thought_start)
         attn_score = attn_score.sum() if granularity == "sentence" else attn_score
 
-        return (ppl, attn_score, past_key_values) if return_kv else (ppl, attn_score)
+        return (ppl, attn_score)
 
     def get_condition_ppl_and_attnscore(
         self,
