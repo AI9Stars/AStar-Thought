@@ -169,7 +169,6 @@ def main():
         data[i]["rate"] =  round(1 / ratio, 4)
         save_data.append({"system": data[i]["system"], "conversations": data[i]["conversations"], "rate": round(1 / ratio, 4), "search_steps": search_steps})
     
-    del validator
     print("========== Data Saving... ==========")
     save_to_jsonl(save_data, args.output_path)
     
