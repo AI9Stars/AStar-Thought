@@ -62,26 +62,35 @@ def load_s1K_data(data_path):
     return data
 
 def work(data, num_gpus, process_id):
-    print(f"Process {process_id + 1} Started")
-    if "cpu" not in args.scorer_device_map:
-        scorer = PromptCompressor(model_name=args.scorer_model_path, device_map=f"cuda:{process_id % num_gpus}", model_config={"torch_dtype": torch.float16})
-    else:
-        scorer = PromptCompressor(model_name=args.scorer_model_path, device_map="cpu", model_config={"torch_dtype": torch.float16})
-
-    output_data = []
-    for i, row_data in tqdm(enumerate(data), total=len(data), desc=f"Process {process_id + 1}"):
-        torch.cuda.empty_cache()
-        bis_sentence_sort = scorer.get_bis_sentence_sort(
-            context=row_data["assistant_thought"], 
-            question=row_data["conversations"][0]["value"], 
-            solution=row_data["assistant_solution"], 
-            alpha=args.alpha
-        )
-        output_data.append(bis_sentence_sort)
+    try:
+        print(f"Process {process_id + 1} Started")
+        if "cpu" not in args.scorer_device_map:
+            scorer = PromptCompressor(model_name=args.scorer_model_path, device_map=f"cuda:{process_id % num_gpus}", model_config={"torch_dtype": torch.float16})
+        else:
+            scorer = PromptCompressor(model_name=args.scorer_model_path, device_map="cpu", model_config={"torch_dtype": torch.float16})
+    
+        output_data = []
+        for i, row_data in tqdm(enumerate(data), total=len(data), desc=f"Process {process_id + 1}"):
+            torch.cuda.empty_cache()
+            bis_sentence_sort = scorer.get_bis_sentence_sort(
+                context=row_data["assistant_thought"], 
+                question=row_data["conversations"][0]["value"], 
+                solution=row_data["assistant_solution"], 
+                alpha=args.alpha
+            )
+            output_data.append(bis_sentence_sort)
+            
+        print(f"Process {process_id + 1} Complete")
+        return output_data
         
-    del scorer
-    print(f"Process {process_id + 1} Complete")
-    return output_data
+    except Exception as e:
+        import sys
+        import traceback
+        exc_type, exc_value, exc_tb = sys.exc_info()
+        tb_lines = traceback.format_exception(exc_type, exc_value, exc_tb)
+        print(f'[worker-{process_id + 1}][pid-{os.getpid()}] CRASH\n{"".join(tb_lines)}',
+              file=sys.stderr, flush=True)
+        raise
 
 def main():
     print("========== Data Loading ==========")
