@@ -36,7 +36,8 @@ class OpenAISamplingParams(BaseModel):
 class SamplingParameters(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
-    params: Union[OpenAISamplingParams, VLLMSamplingParams]
+    # params: Union[OpenAISamplingParams, VLLMSamplingParams]
+    params: Union[OpenAISamplingParams, Any]
 
     @classmethod
     def from_dict(cls, backend: Backend, params: dict):
