@@ -3,6 +3,7 @@ llmlingua
 deepspeed
 torch==2.5.1
 vllm==0.7.3
+ray==2.49.2
 word2number
 latex2sympy2
 setuptools
