@@ -1,10 +1,9 @@
-# flash-attn==2.7.2.post1
-llmlingua
-deepspeed
-torch==2.5.1
-vllm==0.7.3
+deepspeed==0.16.9
+transformers==5.2.0
 ray==2.49.2
+nltk
+pandas
+pyarrow
 word2number
 latex2sympy2
-setuptools
-typer
+datasets

@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from enum import Enum
 from importlib import resources
 from pathlib import Path
-from typing import Literal, Optional, Union
+from typing import Literal, Optional, Union, Any
 
 import yaml
 from openai import NOT_GIVEN, NotGiven
@@ -36,6 +36,8 @@ class OpenAISamplingParams(BaseModel):
 class SamplingParameters(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
+    # 修改这里：将 VLLMSamplingParams 替换为 Any
+    # 这样当传入 vLLM 对象时，Pydantic 就不会去强行校验它了
     # params: Union[OpenAISamplingParams, VLLMSamplingParams]
     params: Union[OpenAISamplingParams, Any]
 

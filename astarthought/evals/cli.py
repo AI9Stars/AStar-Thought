@@ -1,6 +1,8 @@
 import json
 import logging
 import os
+import re
+import yaml
 from pathlib import Path
 from typing import List, Tuple
 
@@ -35,6 +37,41 @@ app = typer.Typer(pretty_exceptions_enable=False)
 
 SAMPLING_PARAMS_DEFAULT = "temperature=0,top_p=1,max_tokens=32768"
 
+def parse_backend_args_str(arg_str: str) -> dict:
+    if not arg_str:
+        return {}
+        
+    # 正则表达式：匹配 "key=value"，其中 value 可以是 {...} 或者是 不包含逗号的任意字符
+    pattern = r'([a-zA-Z0-9_]+)=({.*?}|[^,]+)'
+    matches = re.findall(pattern, arg_str)
+    
+    parsed_args = {}
+    for k, v in matches:
+        v = v.strip()
+        # 如果是字典/JSON格式，使用 yaml.safe_load 实现终极容错
+        if v.startswith('{') and v.endswith('}'):
+            try:
+                v_fixed = re.sub(r':([^\s])', r': \1', v)
+                parsed_args[k] = yaml.safe_load(v_fixed)
+            except Exception as e:
+                print(f"Warning: Failed to parse dict for {k}: {e}")
+                parsed_args[k] = v
+        # 兼容布尔值
+        elif v.lower() == 'true':
+            parsed_args[k] = True
+        elif v.lower() == 'false':
+            parsed_args[k] = False
+        # 兼容数字
+        else:
+            try:
+                if '.' in v:
+                    parsed_args[k] = float(v)
+                else:
+                    parsed_args[k] = int(v)
+            except ValueError:
+                parsed_args[k] = v  # 保持字符串
+                
+    return parsed_args
 
 def get_run_config(
     task: str,
@@ -119,7 +156,8 @@ def parse_common_args(
     sampling_params_as_dict = parse_multi_args(SAMPLING_PARAMS_DEFAULT)
     sampling_params_as_dict.update(user_provided_sampling_params_as_dict)
 
-    backend_args_as_dict = parse_multi_args(backend_args)
+    # backend_args_as_dict = parse_multi_args(backend_args)
+    backend_args_as_dict = parse_backend_args_str(backend_args)
 
     if n is not None:
         sampling_params_as_dict["n"] = n

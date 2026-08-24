@@ -2,6 +2,7 @@ system_prompts:
   no_system_prompts: &no_system_prompts ""
   qwen: &qwen_system_prompt "You are a helpful and harmless assistant. You are Qwen developed by Alibaba."
   qwen_cot: &qwen_cot_system_prompt "You are a helpful and harmless assistant. You are Qwen developed by Alibaba. Let's think step-by-step."
+  qwen3_5_cot: &qwen3_5_cot_system_prompt "Please reason step by step, and put your final answer within \boxed{}."
   prime_rl: &prime_rl_system_prompt
     # system prompt can also point to a text file. the path to the file should be relative to the parent dir of model_configs.yaml
     path: system_prompts/prime.txt
@@ -88,6 +89,8 @@ system_prompts:
         Now, try to solve the following question through the above guidelines. \
         Let's skip as much as possible."
 
+  minicpm: &minicpm_cot_system_prompt "Please reason step by step, and put your final answer within \boxed{}."
+
 user_templates: null
 # Example: 
 #   o1_mini: &o1_mini "Question: {input}\nAnswer: "
@@ -149,3 +152,9 @@ models:
   
   AStartThought-s1.1-32B:
     system_prompt: *sky_t1_system_prompt
+  
+  AStarThought-V2-Qwen3.5-9B:
+    system_prompt: *no_system_prompts
+
+  AStarThought-V2-Qwen3.6-27B:
+    system_prompt: *no_system_prompts
