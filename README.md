@@ -19,14 +19,14 @@
 </p>
 
 <p align="center">
-  <a href="#-resources">Resources</a> ·
-  <a href="#-news">News</a> ·
-  <a href="#-overview">Overview</a> ·
-  <a href="#-quick-start">Quick Start</a> ·
-  <a href="#-compress-data">Compress Data</a> ·
-  <a href="#-train">Train</a> ·
-  <a href="#-evaluate">Evaluate</a> ·
-  <a href="#-citation">Citation</a>
+  <a href="#-news">📜 News</a> ·
+  <a href="#-resources">📌 Resources</a> ·
+  <a href="#-overview">👀 Overview</a> ·
+  <a href="#-quick-start">🚀 Quick Start</a> ·
+  <a href="#-compress-data">📂 Compress Data</a> ·
+  <a href="#-train">🔥 Train</a> ·
+  <a href="#-evaluate">💭 Evaluate</a> ·
+  <a href="#-citation">✨ Citation</a>
 </p>
 
 ## 📜 News
