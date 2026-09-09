@@ -29,6 +29,12 @@
   <a href="#-citation">Citation</a>
 </p>
 
+## 📜 News
+
+- **[2026/09/07]** 🎉 We released the [📄 paper](https://arxiv.org/abs/2609.07821), [💻 code](https://github.com/AI9Stars/AStar-Thought), and [🤗 models & datasets](https://huggingface.co/collections/xxang/astar-thought-v2) of A*-Thought-V2.
+- **[2025/09/19]** 🎉 A*-Thought has been accepted to **NeurIPS 2025**!
+- **[2025/05/30]** 🎉 We released the [📄 paper](https://arxiv.org/abs/2505.24550v2), [💻 code](https://github.com/AI9Stars/AStar-Thought), and [🤗 models & datasets](https://huggingface.co/collections/xxang/astar-thought) of A*-Thought.
+
 ## 📌 Resources
 
 ### 💫 A*-Thought
@@ -47,12 +53,6 @@
 | **Dataset** | **AStar-Thought-V2-OpenR1-Math-3k** | OpenR1-Math-3k | [🤗 HF Data](https://huggingface.co/datasets/xxang/AStar-Thought-V2-OpenR1-Math-3k) | The training dataset used for A*-Thought-V2 model training. |
 | **Model** | **AStar-Thought-V2-Qwen3.5-9B** | Qwen3.5-9B | [🤗 HF Model](https://huggingface.co/xxang/AStar-Thought-V2-Qwen3.5-9B) | Qwen3.5-9B trained on AStar-Thought-V2-OpenR1-Math-3k. |
 | **Model** | **AStar-Thought-V2-Qwen3.6-27B** | Qwen3.6-27B | [🤗 HF Model](https://huggingface.co/xxang/AStar-Thought-V2-Qwen3.6-27B) | Qwen3.5-9B trained on AStar-Thought-V2-OpenR1-Math-3k. |
-
-## 📜 News
-
-- **[2025/09/19]** 🎉 A*-Thought has been accepted to **NeurIPS 2025**!
-- **[2025/05/30]** 🎉 We released the [📄 paper](https://arxiv.org/abs/2505.24550v2), [💻 code](https://github.com/AI9Stars/AStar-Thought), and [🤗 models & datasets](https://huggingface.co/collections/xxang/astar-thought) of A*-Thought.
-
 
 ## 👀 Overview
 
@@ -293,11 +293,23 @@ For logs and results of evaluation, please refer to: [A*-Thought-V2 Experiments 
 Please cite our paper if you find this work useful:
 
 ```bibtex
-@inproceedings{xu2025astarthought,
+@inproceedings{A*-Thought,
   title     = {A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings},
   author    = {Xiaoang Xu and Shuo Wang and Xu Han and Zhenghao Liu and Huijia Wu and Pei Pei Li and Zhiyuan Liu and Maosong Sun and Zhaofeng He},
   booktitle = {The Thirty-ninth Annual Conference on Neural Information Processing Systems},
   year      = {2025},
   url       = {https://openreview.net/forum?id=uvyr9bYwL6}
+}
+```
+
+```bibtex
+@misc{A*-Thought-V2,
+      title={A*-Thought-V2: Efficient Latent Reasoning via Geometric Dynamics of LLM}, 
+      author={Xiaoang Xu and Siyuan Liu and Shuo Wang and Junlan Feng and Fanyu Meng and Zhu Zhang and Jixun Wang and Xiaorong Wang and Zihan Zhou and Xin Li and Chaojun Xiao and Yiming Zhang and Huijia Wu and Liuyu Xiang and Peipei Li and Zhaofeng He},
+      year={2026},
+      eprint={2609.07821},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2609.07821}, 
 }
 ```
