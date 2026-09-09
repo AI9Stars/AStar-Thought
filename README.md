@@ -19,6 +19,18 @@
 </p>
 
 <p align="center">
+  <strong>A*-Thought-V2: Efficient Latent Reasoning via Geometric Dynamics of LLM</strong>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2609.07821"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper"></a>
+  &nbsp;
+  <a href="https://github.com/AI9Stars/AStar-Thought"><img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="GitHub"></a>
+  &nbsp;
+  <a href="[https://huggingface.co/collections/xxang/astar-thought-v2"><img src="https://img.shields.io/badge/Models%20%26%20Data-Hugging%20Face-yellow.svg" alt="Hugging Face"></a>
+</p>
+
+<p align="center">
   <a href="#-news">📜 News</a> ·
   <a href="#-resources">📌 Resources</a> ·
   <a href="#-overview">👀 Overview</a> ·
