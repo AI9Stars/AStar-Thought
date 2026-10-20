@@ -23,11 +23,27 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2609.07821"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper"></a>
+  <a href="https://arxiv.org/abs/2609.07821">
+    <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper">
+  </a>
   &nbsp;
-  <a href="https://github.com/AI9Stars/AStar-Thought"><img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="GitHub"></a>
+  <a href="https://github.com/AI9Stars/AStar-Thought">
+    <img src="https://img.shields.io/badge/Code-GitHub-black.svg" alt="GitHub">
+  </a>
   &nbsp;
-  <a href="[https://huggingface.co/collections/xxang/astar-thought-v2"><img src="https://img.shields.io/badge/Models%20%26%20Data-Hugging%20Face-yellow.svg" alt="Hugging Face"></a>
+  <a href="https://huggingface.co/collections/xxang/astar-thought-v2">
+    <img src="https://img.shields.io/badge/Models%20%26%20Data-Hugging%20Face-yellow.svg" alt="Hugging Face">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://paperswithcode.co/api/v1/papers/2609.07821/leaderboard-badge-link?eval=29304">
+    <img src="https://paperswithcode.co/api/v1/papers/2609.07821/leaderboard-badge.svg?eval=29304&amp;live=1" alt="Papers with Code: AIME 2024 leaderboard">
+  </a>
+  &nbsp;
+  <a href="https://paperswithcode.co/api/v1/papers/2609.07821/leaderboard-badge-link?eval=29307">
+    <img src="https://paperswithcode.co/api/v1/papers/2609.07821/leaderboard-badge.svg?eval=29307&amp;live=1" alt="Papers with Code: ARC-C leaderboard">
+  </a>
 </p>
 
 <p align="center">
