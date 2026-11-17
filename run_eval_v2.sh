@@ -7,11 +7,12 @@ max_tokens=81920
 max_latent_count=4
 max_latent_len=32
 
+# limit_mm_per_prompt={'image':0,'video':0} to enable latent sampling
 python -m astarthought.evals.cli evaluate \
     --task ${task} \
     --model ${model} \
     --backend vllm \
-    --backend-args "tensor_parallel_size=8,gpu_memory_utilization=0.8,reasoning_parser=qwen3,hf_overrides={'max_latent_count':${max_latent_count},'max_latent_len':${max_latent_len}}" \
+    --backend-args "tensor_parallel_size=8,gpu_memory_utilization=0.8,reasoning_parser=qwen3,limit_mm_per_prompt={'image':0,'video':0},hf_overrides={'max_latent_count':${max_latent_count},'max_latent_len':${max_latent_len}}" \
     --sampling-params temperature=1.0,top_p=0.95,max_tokens=${max_tokens} \
     --result-dir ./saves/result \
     --overwrite \
